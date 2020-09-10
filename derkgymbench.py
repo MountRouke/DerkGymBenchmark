@@ -27,11 +27,6 @@ def benchmark(simulation_only=False, format="csv"):
         print('--- | --- | --- | ---')
     print(str(n_arenas) + delim, end="")
     print(str(time.time() - env_start) + delim, end="")
-    # Run reset and step once first to compile shaders. These
-    # are not included in the benchmark, as this warmup only happens
-    # once normally
-    env.reset()
-    env.step()
 
     reset_start = time.time()
     observation_n = env.reset()
