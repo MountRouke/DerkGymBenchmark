@@ -2,7 +2,7 @@
 
 ## Results
 
-MSI Laptop:
+#### MSI Laptop
 simulation_only=False Renderer=ANGLE (NVIDIA GeForce GTX 1070 Direct3D11 vs_5_0 ps_5_0) Vendor=Google Inc.
 n_arenas | create env | reset | run
 --- | --- | --- | ---
@@ -12,7 +12,7 @@ n_arenas | create env | reset | run
 256 | 9.39712905883789 | 4.501130104064941 | 14.37168264389038
 512 | 9.467995166778564 | 6.397855997085571 | 23.848492860794067
 
-Google Colab:
+#### Google Colab
 simulation_only=False Renderer=ANGLE (NVIDIA Corporation, Tesla P100-PCIE-16GB/PCIe/SSE2, OpenGL 4.5 core) Vendor=Google Inc.
 n_arenas | create env | reset | run
 --- | --- | --- | ---
@@ -26,7 +26,7 @@ n_arenas | create env | reset | run
 
 With `simulation_only` we are skipping sending actions and reading observations, so it measures the raw simulation performance on a system.
 
-MSI Laptop:
+#### MSI Laptop
 simulation_only=True Renderer=ANGLE (NVIDIA GeForce GTX 1070 Direct3D11 vs_5_0 ps_5_0) Vendor=Google Inc.
 n_arenas | create env | reset | run
 --- | --- | --- | ---
@@ -36,7 +36,7 @@ n_arenas | create env | reset | run
 256 | 9.316890716552734 | 4.478029727935791 | 7.207346200942993
 512 | 10.956312656402588 | 6.25600266456604 | 7.5004003047943115
 
-Google Colab:
+#### Google Colab
 simulation_only=True Renderer=ANGLE (NVIDIA Corporation, Tesla P100-PCIE-16GB/PCIe/SSE2, OpenGL 4.5 core) Vendor=Google Inc.
 n_arenas | create env | reset | run
 --- | --- | --- | ---
