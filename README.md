@@ -2,6 +2,7 @@
 
 ## Results
 
+MSI Laptop:
 simulation_only=False Renderer=ANGLE (NVIDIA GeForce GTX 1070 Direct3D11 vs_5_0 ps_5_0) Vendor=Google Inc.
 n_arenas | create env | reset | run
 --- | --- | --- | ---
@@ -11,6 +12,21 @@ n_arenas | create env | reset | run
 256 | 9.39712905883789 | 4.501130104064941 | 14.37168264389038
 512 | 9.467995166778564 | 6.397855997085571 | 23.848492860794067
 
+Google Colab:
+simulation_only=False Renderer=ANGLE (NVIDIA Corporation, Tesla P100-PCIE-16GB/PCIe/SSE2, OpenGL 4.5 core) Vendor=Google Inc.
+n_arenas | create env | reset | run
+--- | --- | --- | ---
+1 | 6.465725898742676 | 1.4379055500030518 | 13.188597202301025
+16 | 6.669091701507568 | 9.336360216140747 | 15.219738483428955
+128 | 6.875734329223633 | 39.23567032814026 | 24.07135581970215
+256 | 7.092120409011841 | 93.77445411682129 | 41.48233103752136
+512 | 7.307255983352661 | 262.2259876728058 | 94.52435517311096
+
+## Results (simulation only)
+
+With `simulation_only` we are skipping sending actions and reading observations, so it measures the raw simulation performance on a system.
+
+MSI Laptop:
 simulation_only=True Renderer=ANGLE (NVIDIA GeForce GTX 1070 Direct3D11 vs_5_0 ps_5_0) Vendor=Google Inc.
 n_arenas | create env | reset | run
 --- | --- | --- | ---
@@ -19,3 +35,13 @@ n_arenas | create env | reset | run
 128 | 11.010828018188477 | 3.5832571983337402 | 7.238966941833496
 256 | 9.316890716552734 | 4.478029727935791 | 7.207346200942993
 512 | 10.956312656402588 | 6.25600266456604 | 7.5004003047943115
+
+Google Colab:
+simulation_only=True Renderer=ANGLE (NVIDIA Corporation, Tesla P100-PCIE-16GB/PCIe/SSE2, OpenGL 4.5 core) Vendor=Google Inc.
+n_arenas | create env | reset | run
+--- | --- | --- | ---
+1 | 6.899520397186279 | 1.3478658199310303 | 12.156709909439087
+16 | 6.550668716430664 | 9.02074384689331 | 14.280853033065796
+128 | 6.671059846878052 | 39.776060819625854 | 20.020533084869385
+256 | 6.6941001415252686 | 92.20242023468018 | 27.712412118911743
+512 | 6.8093101978302 | 28.824622631072998 | 41.897865533828735
