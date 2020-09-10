@@ -50,7 +50,7 @@ def benchmark(simulation_only=False, format="csv"):
 
 if __name__ == "__main__":
   parser = ArgumentParser()
-  parser.add_argument("-s", "--simulation_only", dest="simulation_only", default=False)
+  parser.add_argument("-s", "--simulation_only", action="store_true", dest="simulation_only", default=False)
   parser.add_argument("-f", "--format", dest="format", default="markdown")
   args = parser.parse_args()
   benchmark(simulation_only=args.simulation_only, format=args.format)
