@@ -28,19 +28,25 @@ def benchmark(simulation_only=False, format="csv"):
     print(str(n_arenas) + delim, end="")
     print(str(time.time() - env_start) + delim, end="")
 
-    reset_start = time.time()
-    observation_n = env.reset()
-    print(str(time.time() - reset_start) + delim, end="")
-
     # action_space.sample() can take a lot of time so we just run it once outside the loop
     action_n = None if simulation_only else [env.action_space.sample() for i in range(env.n_agents)]
 
-    run_start = time.time()
-    while True:
-      observation_n, reward_n, done_n, info_n = env.step(action_n)
-      if all(done_n):
-        break
-    print(str(time.time() - run_start))
+    n_samples = 20
+    reset_time = 0
+    step_time = 0
+    for i in range(n_samples):
+      reset_start = time.time()
+      observation_n = env.reset()
+      reset_time = reset_time + time.time() - reset_start
+
+      run_start = time.time()
+      while True:
+        observation_n, reward_n, done_n, info_n = env.step(action_n)
+        if all(done_n):
+          break
+      step_time = step_time + time.time() - run_start
+    print(str(reset_time / n_samples) + delim, end="")
+    print(str(step_time / n_samples))
     env.close()
 
 if __name__ == "__main__":
