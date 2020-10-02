@@ -2,7 +2,7 @@ from gym_derk.envs import DerkEnv
 import time
 from argparse import ArgumentParser
 
-def benchmark(simulation_only=False, format="csv"):
+def benchmark(simulation_only=False, format="csv", arenas=[1, 16, 128, 256, 512]):
   """Run benchmark
 
   Args:
@@ -11,14 +11,16 @@ def benchmark(simulation_only=False, format="csv"):
   """
   delim = ', ' if format == 'csv' else ' | '
 
-  for n_arenas in [1, 16, 128, 256, 512]:
+  first = True
+  for n_arenas in arenas:
     env_start = time.time()
     env = DerkEnv(
       n_arenas=n_arenas,
       turbo_mode=True,
       debug_no_observations=simulation_only
     )
-    if n_arenas == 1:
+    if first:
+      first = False
       print('simulation_only=' + str(simulation_only) + ' ' + env.get_webgl_renderer())
       if format == 'csv':
         print('"n_arenas", "create env", "reset", "run"')
