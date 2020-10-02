@@ -3,7 +3,7 @@
 ## Results
 
 #### MSI Laptop
-simulation_only=False Renderer=ANGLE (NVIDIA GeForce GTX 1070 Direct3D11 vs_5_0 ps_5_0) Vendor=Google Inc.
+gym_derk=0.8.8 simulation_only=False Renderer=ANGLE (NVIDIA GeForce GTX 1070 Direct3D11 vs_5_0 ps_5_0) Vendor=Google Inc.
 n_arenas | create env | reset | run
 --- | --- | --- | ---
 1 | 9.839654922485352 | 0.32373160123825073 | 7.0406115531921385
@@ -13,14 +13,14 @@ n_arenas | create env | reset | run
 512 | 10.198314428329468 | 5.291917157173157 | 11.368128108978272
 
 #### [Google Colab](https://colab.research.google.com/drive/1n5Bl1pdBpQphOCOGWC31uUbmjMubPUM1?usp=sharing)
-gym_derk=0.3.31 simulation_only=False Renderer=ANGLE (NVIDIA Corporation, Tesla P100-PCIE-16GB/PCIe/SSE2, OpenGL 4.5 core) Vendor=Google Inc.
+gym_derk=0.8.8 simulation_only=False Renderer=ANGLE (NVIDIA Corporation, Tesla T4/PCIe/SSE2, OpenGL 4.5 core) Vendor=Google Inc.
 n_arenas | create env | reset | run
 --- | --- | --- | ---
-1 | 6.508690118789673 | 1.0353975296020508 | 14.979998588562012
-16 | 7.248045206069946 | 6.955777883529663 | 15.178634405136108
-128 | 6.8916120529174805 | 3.758395195007324 | 25.518474817276
-256 | 7.1017746925354 | 19.98109531402588 | 47.711907625198364
-512 | 7.296813726425171 | 64.13919425010681 | 88.16214418411255
+1 | 7.550839900970459 | 0.6018623352050781 | 12.186449444293975
+16 | 6.966512203216553 | 1.8697877049446106 | 17.885735976696015
+128 | 7.197777032852173 | 6.993409049510956 | 22.694823217391967
+256 | 7.159849405288696 | 18.985179924964903 | 48.48422088623047
+512 | 6.919511318206787 | 42.417170870304105 | 112.21933056116104
 
 ## Results (simulation only)
 
