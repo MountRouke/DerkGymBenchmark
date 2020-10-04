@@ -3,7 +3,7 @@
 ## Results
 
 #### MSI Laptop
-gym_derk=0.8.12 simulation_only=False Renderer=ANGLE (NVIDIA GeForce GTX 1070 Direct3D11 vs_5_0 ps_5_0) Vendor=Google Inc.
+gym_derk=0.8.12 Renderer=ANGLE (NVIDIA GeForce GTX 1070 Direct3D11 vs_5_0 ps_5_0) Vendor=Google Inc.
 n_arenas | create env | reset | run
 --- | --- | --- | ---
 1 | 13.788016557693481 | 0.3312889814376831 | 6.795670473575592
@@ -13,35 +13,11 @@ n_arenas | create env | reset | run
 512 | 10.400627613067627 | 5.582725572586059 | 11.112144911289215
 
 #### [Google Colab](https://colab.research.google.com/drive/1n5Bl1pdBpQphOCOGWC31uUbmjMubPUM1?usp=sharing)
-gym_derk=0.8.8 simulation_only=False Renderer=ANGLE (NVIDIA Corporation, Tesla T4/PCIe/SSE2, OpenGL 4.5 core) Vendor=Google Inc.
+gym_derk=0.8.12 Renderer=ANGLE (NVIDIA Corporation, Tesla T4/PCIe/SSE2, OpenGL 4.5 core) Vendor=Google Inc.
 n_arenas | create env | reset | run
 --- | --- | --- | ---
-1 | 7.550839900970459 | 0.6018623352050781 | 12.186449444293975
-16 | 6.966512203216553 | 1.8697877049446106 | 17.885735976696015
-128 | 7.197777032852173 | 6.993409049510956 | 22.694823217391967
-256 | 7.159849405288696 | 18.985179924964903 | 48.48422088623047
-512 | 6.919511318206787 | 42.417170870304105 | 112.21933056116104
-
-## Results (simulation only)
-
-With `simulation_only` we are skipping sending actions and reading observations, so it measures the raw simulation performance on a system.
-
-#### MSI Laptop
-simulation_only=True Renderer=ANGLE (NVIDIA GeForce GTX 1070 Direct3D11 vs_5_0 ps_5_0) Vendor=Google Inc.
-n_arenas | create env | reset | run
---- | --- | --- | ---
-1 | 10.696801662445068 | 1.2546467781066895 | 8.589587211608887
-16 | 9.075611114501953 | 3.0731422901153564 | 7.435558319091797
-128 | 11.010828018188477 | 3.5832571983337402 | 7.238966941833496
-256 | 9.316890716552734 | 4.478029727935791 | 7.207346200942993
-512 | 10.956312656402588 | 6.25600266456604 | 7.5004003047943115
-
-#### [Google Colab](https://colab.research.google.com/drive/1n5Bl1pdBpQphOCOGWC31uUbmjMubPUM1?usp=sharing)
-gym_derk=0.3.31 simulation_only=True Renderer=ANGLE (NVIDIA Corporation, Tesla P100-PCIE-16GB/PCIe/SSE2, OpenGL 4.5 core) Vendor=Google Inc.
-n_arenas | create env | reset | run
---- | --- | --- | ---
-1 | 6.6961400508880615 | 1.0873403549194336 | 14.232188701629639
-16 | 7.100988149642944 | 2.3944168090820312 | 19.30512762069702
-128 | 7.2415711879730225 | 3.930626153945923 | 22.317745447158813
-256 | 6.857605695724487 | 9.035313367843628 | 33.19769358634949
-512 | 7.013039827346802 | 65.92133045196533 | 35.34335923194885
+1 | 7.133004426956177 | 0.5088932275772095 | 11.919462442398071
+16 | 6.9401490688323975 | 1.7939874649047851 | 16.63735775947571
+128 | 6.739939212799072 | 5.368394148349762 | 19.66027992963791
+256 | 7.1129350662231445 | 21.739620864391327 | 28.31662973165512
+512 | 7.248163461685181 | 47.83926422595978 | 38.09383624792099
