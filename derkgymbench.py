@@ -2,7 +2,7 @@ from gym_derk.envs import DerkEnv
 import time
 from argparse import ArgumentParser
 
-def benchmark(simulation_only=False, format="csv", arenas=[1, 16, 128, 256, 512]):
+def benchmark(no_observations=False, no_actions=False, format="csv", arenas=[1, 16, 128, 256, 512]):
   """Run benchmark
 
   Args:
@@ -17,11 +17,11 @@ def benchmark(simulation_only=False, format="csv", arenas=[1, 16, 128, 256, 512]
     env = DerkEnv(
       n_arenas=n_arenas,
       turbo_mode=True,
-      debug_no_observations=simulation_only
+      debug_no_observations=no_observations
     )
     if first:
       first = False
-      print('simulation_only=' + str(simulation_only) + ' ' + env.get_webgl_renderer())
+      print('no_observations=' + str(no_observations) + ' ' + 'no_actions=' + str(no_actions) + ' ' + env.get_webgl_renderer())
       if format == 'csv':
         print('"n_arenas", "create env", "reset", "run"')
       else:
@@ -31,7 +31,7 @@ def benchmark(simulation_only=False, format="csv", arenas=[1, 16, 128, 256, 512]
     print(str(time.time() - env_start) + delim, end="")
 
     # action_space.sample() can take a lot of time so we just run it once outside the loop
-    action_n = None if simulation_only else [env.action_space.sample() for i in range(env.n_agents)]
+    action_n = None if no_actions else [env.action_space.sample() for i in range(env.n_agents)]
 
     n_samples = 20
     reset_time = 0
