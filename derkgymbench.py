@@ -17,11 +17,11 @@ def benchmark(simulation_only=False, format="csv", arenas=[1, 16, 128, 256, 512]
     env = DerkEnv(
       n_arenas=n_arenas,
       turbo_mode=True,
-      debug_no_observations=simulation_only
+      session_args={'debug_no_observations': simulation_only}
     )
     if first:
       first = False
-      print('simulation_only=' + str(simulation_only) + ' ' + env.get_webgl_renderer())
+      print('simulation_only=' + str(simulation_only) + ' ' + env.app.get_webgl_renderer())
       if format == 'csv':
         print('"n_arenas", "create env", "reset", "run"')
       else:
